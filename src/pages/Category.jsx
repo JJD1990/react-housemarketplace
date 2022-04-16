@@ -19,8 +19,8 @@ function Category() {
                 const listingsRef = collection(db, 'listings')
 
                 const q = query(listingsRef,
-                    where('type', '==', params.catergoryName),
-                    orderBy('timestamp', 'desc'), limit(10))
+                    where('type', '==', params.categoryName),
+                    orderBy('timestamp', 'desc'), limit(2))
 
                 const querySnap = await getDocs(q)
 
@@ -43,7 +43,7 @@ function Category() {
             }
         }
         fetchListings()
-    }, [params.catergoryName])
+    }, [params.categoryName])
 
     //pagination / Load more
     const onFetchMoreListings = async () => {
@@ -88,7 +88,7 @@ function Category() {
         <div className="category">
             <header>
                 <p className="pageHeader">
-                    {params.catergoryName === 'rent' ? 'Places for rent' : 'Places for sale'}
+                    {params.categoryName === 'rent' ? 'Places for rent' : 'Places for sale'}
                 </p>
             </header>
             {loading ? (<Spinner />) : listings && listings.length > 0 ?
@@ -113,7 +113,7 @@ function Category() {
                         </p>
                     )}
                 </>)
-                : (<p>No listings for {params.catergoryName}</p>)}
+                : (<p>No listings for {params.categoryName}</p>)}
         </div>
     )
 }

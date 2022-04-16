@@ -23,8 +23,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Explore />} />
           <Route path='/offers' element={<Offers />} />
-          <Route path='/category/:catergoryName' element={<Category />} />
-          <Route path='/category/:catergoryName/:listingId' element={<Listing />} />
+          <Route path='/category/:categoryName' element={<Category />} />
+          <Route path='/category/:categoryName/:listingId' element={<Listing />} />
           <Route path='/contact/:landlordId' element={<Contact />} />
 
           <Route path='/profile' element={<PrivateRoute />}>

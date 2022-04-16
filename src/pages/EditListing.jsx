@@ -12,7 +12,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { v4 as uuidv4 } from 'uuid'
 import Spinner from '../components/Spinner'
-import { async } from '@firebase/util'
+
 
 function EditListing() {
     // eslint-disable-next-line
